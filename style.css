@@ -1,0 +1,381 @@
+/* Основные стили */
+*{
+    cursor: url('pics/aim.cur'), auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e4d3a6;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    cursor: url('pics/aim.cur'), auto;
+}
+
+/* Заголовок */
+#title {
+    position: relative;
+    z-index: 100;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px rgba(65, 44, 25, 0.712);
+    top: 68px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    rotate: -6deg;
+}
+
+.banner {
+    margin-top: -320px;
+    z-index: -1;
+    position: absolute;
+}
+
+.banner img {
+    width: 600px;
+}
+
+
+/* Панель очков и таймера */
+#scoreboard {
+    font-size: 47px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 5px rgba(65, 44, 25, 0.712);
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    bottom: -360px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+/* Экран игры */
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* Стили для отверстий */
+.hole-container {
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.hole {
+    z-index: 100;
+    width: 150px;
+    height: 150px;
+    background-color: #333;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(-10deg);
+    box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Стили для бобра */
+.beaver {
+    z-index: 100;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease;
+    /* Добавлена плавная анимация */
+    width: 80%;
+    height: auto;
+}
+
+.beaver:hover {
+    cursor: url('pics/aim-red.cur'), auto;
+}
+
+
+
+/* Стили для отображения бобра по центру */
+.hole .beaver.active {
+    bottom: 0;
+    /* Бобер появляется из отверстия */
+}
+
+
+/* Кнопка Start */
+#start-button {
+    z-index: 100;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: rgb(207, 26, 26);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: url('pics/aim-red.cur'), auto;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: rgb(243, 75, 75);
+    transform: scale(1.1);
+    transition: 0.15s;
+}
+
+/* Кнопка Restart */
+#restart-button {
+    z-index: 100;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: rgb(207, 26, 26);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: url('pics/aim-red.cur'), auto;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#restart-button:hover {
+    background-color: rgb(243, 75, 75);
+    transform: scale(1.1);
+    transition: 0.15s;
+}
+
+/* Кнопка Stop */
+#stop-button {
+    z-index: 100;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: rgb(207, 26, 26);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: url('pics/aim-red.cur'), auto;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#stop-button:hover {
+    background-color: rgb(243, 75, 75);
+    transform: scale(1.1);
+    transition: 0.15s;
+}
+
+.cursor-image {
+    position: absolute;
+    pointer-events: none; /* Исключаем элемент из событий мыши */
+    z-index: 1000; /* Устанавливаем высокий z-index */
+    margin-left: -20px;
+    margin-top: -20px;
+    width: 50px; /* Уменьшаем размер изображения */
+    height: 50px; /* Уменьшаем размер изображения */
+    transition: opacity 2s ease; /* Плавное исчезание */
+}
+
+.fade-out {
+    opacity: 0; /* Делает изображение прозрачным */
+}
+
+.gun {
+    margin-bottom: -150px;
+    position: absolute;
+    pointer-events: none; /* Исключаем элемент из событий мыши */
+    z-index: 700; /* Устанавливаем высокий z-index */
+    width: 700px; /* Увеличенный размер изображения */
+    height: auto; /* Сохраняем пропорции */
+    bottom: 0; /* Располагаем изображение у нижнего края экрана */
+}
+
+.bottom {
+    bottom: -90px;
+    position: absolute; 
+    z-index: 1;
+}
+
+.bottom img {
+    width: 100vw;
+}
+
+.curtains {
+    position: absolute;
+    z-index: -1;
+    top: -80px;
+    opacity: 0.9;
+}
+
+.curtains img {
+    width: 150vw;
+}
+
+.table {
+    position: absolute;
+    z-index: -1;
+    bottom: 100px;
+}
+
+.table img {
+    width: 400px;
+}
+
+.table1 {
+    left: 270px;
+}
+
+.table2 {
+    right: 290px;
+}
+
+.modal {
+    display: none;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: absolute; 
+    z-index: 5000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    opacity: 1;
+    background-color: #fefefe;
+    margin:100px 15%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 1200px;
+    height: 700px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+h2 {
+    margin-top: -20px;
+    margin-left: 100px;
+    font-size: 100px;
+    color: rgb(59, 39, 21);
+    font-weight: 800;
+}
+
+.close {
+    margin-top: -25px;
+    color: #aaa;
+    float: right;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(150, 27, 27);
+    text-decoration: none;
+}
+
+#imageContainer .kamala {
+    position: absolute;
+    bottom: 79px;
+    width: 500px;
+    left: 35%;
+}
+
+#imageContainer .hole1 {
+    position: absolute;
+    z-index: 1001;
+    left: 400px;
+    width: 70px;
+    bottom: 240px;
+}
+
+#imageContainer .hole2 {
+    position: absolute;
+    z-index: 1001;
+    left: 600px;
+    width: 70px;
+
+}
+
+#imageContainer .hole3 {
+    position: absolute;
+    z-index: 1001;
+    right: 700px;
+    width: 70px;
+    bottom: 400px;
+}
+
+.modal-content p {
+    margin-top: -80px;
+    margin-left: 100px;
+    font-size: 50px;
+    color: rgb(59, 39, 21);
+    font-weight: 700;
+}
+
+#finalScore {
+    color: rgb(146, 24, 24);
+}
+
+.modal-content p img {
+    width: 60px;
+}
+
+.x {
+    position: absolute;
+    z-index: 2000;
+    right: 24%;;
+    top: 8%;
+  }
+  .x button{
+      width: 90px;
+      height: 90px;
+      background-image: url('pics/table.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      text-shadow: 2.5px 2px rgba(65, 44, 25, 0.712);
+      font-size: 50px;
+      font-weight: 800;
+      font-family: "Spicy Rice", serif;
+      color: rgb(255, 255, 255);
+      background-color: transparent;
+      border: rgb(65, 44, 25) 6px solid;
+      border-radius: 45px;
+      cursor: url('pics/aim-red.cur'), auto;
+    }
+    
+    .x button:hover {
+      transform: scale(1.2);
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+    }
+  
+  .pump {
+    position: absolute;
+    left: 21%;
+    z-index: 2000;
+    top: 8.7%;
+  }
+  
+  .pump button{
+    background-image: url('pics/table.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 2.5px 2px rgba(65, 44, 25, 0.712);
+    width: 185px;
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Spicy Rice", serif;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: rgb(65, 44, 25) 6px solid;
+    border-radius: 40px;
+    cursor: url('pics/aim-red.cur'), auto;
+  }
+  
+  .pump button:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+  }

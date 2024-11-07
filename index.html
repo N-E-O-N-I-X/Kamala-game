@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamala shooting game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="pics/beaver.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Заголовок -->
+    <h1 id="title">Kamala shooting game</h1>
+
+    <!-- Отображение очков и таймера -->
+    <div id="scoreboard">
+        <span>Points: <span id="score">0</span></span>
+        <span>Time: <span id="timer">60</span> sec</span>
+    </div>
+
+    <div class="pump">
+        <button onclick="window.location.href='https://pump.fun/board'">PUMP</button>
+      </div>
+      <div class="x">
+        <button onclick="window.location.href=''">X</button>
+      </div>
+    <!-- Экран игры -->
+    <div id="game-screen">
+        <div class="hole-container">
+            <div class="hole">
+                <img src="pics/beaver.png" class="beaver" alt="Beaver">
+            </div>
+            <div class="hole">
+                <img src="pics/beaver.png" class="beaver" alt="Beaver">
+            </div>
+            <div class="hole">
+                <img src="pics/beaver.png" class="beaver" alt="beaver">
+            </div>
+        </div>
+        <button id="start-button">Start</button>
+        <button id="restart-button" style="display: none;">Restart</button>
+        <button id="stop-button" style="display: none;">Stop</button> <!-- Кнопка Stop -->
+        <audio id="hit-sound" src="hit-sound.mp3"></audio>
+        <audio id="title-sound" src="title-sound.mp3"></audio>
+        <div class="bottom"><img src="pics/bottom.jpg"></div>
+        <div class="curtains"><img src="pics/curtains.png"></div>
+        <div class="banner"><img src="pics/banner.png"></div>
+        <div class="table1 table"><img src="pics/table.png"></div>
+        <div class="table2 table"><img src="pics/table.png"></div>
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Game Over!</h2>
+                <p>Your score: <span id="finalScore"></span><img src="pics/beaver.png"></p>
+                <div id="imageContainer">
+                    <!-- Здесь можно добавить картинки по желанию -->
+                    <img class="kamala" src="pics/cum.jpg" alt="Game Image">
+                    <img class="hole1" src="pics/hole1.png" alt="Game Image">
+                    <img class="hole2" src="pics/hole2.png" alt="Game Image">
+                    <img class="hole3" src="pics/hole3.png" alt="Game Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
